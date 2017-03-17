@@ -50,6 +50,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AggregatedResult.cs" />
+    <Compile Include="Attributes\ConstraintAttribute.cs" />
+    <Compile Include="Attributes\IsInterfaceAttribute.cs" />
     <Compile Include="Exceptions\ConfigurationException.cs" />
     <Compile Include="Exceptions\DnsResolveFailureException.cs" />
     <Compile Include="Exceptions\UriFormatInvalidException.cs" />
@@ -58,9 +60,16 @@
     <Compile Include="Implementations\AppConfigConfigurationProvider.cs" />
     <Compile Include="Implementations\PingConfiguration.cs" />
     <Compile Include="Interfaces\IConfigurationProvider.cs" />
+    <Compile Include="Interfaces\IlDecompiler.cs" />
+    <Compile Include="Interfaces\IlInstruction.cs" />
     <Compile Include="Interfaces\IPing.cs" />
     <Compile Include="Interfaces\IPingConfiguration.cs" />
     <Compile Include="IOC\AutofacConfiguration.cs" />
+    <Compile Include="IOC\RuntimeChecks\BigEndianByteReader.cs" />
+    <Compile Include="IOC\RuntimeChecks\ConstraintFailedException.cs" />
+    <Compile Include="IOC\RuntimeChecks\IncorrectConstraintException.cs" />
+    <Compile Include="IOC\LockUtil.cs" />
+    <Compile Include="IOC\RuntimeChecks\NctChecks.cs" />
     <Compile Include="NetworkUsageResult.cs" />
     <Compile Include="Implementations\Ping.cs" />
     <Compile Include="PingResult.cs" />
