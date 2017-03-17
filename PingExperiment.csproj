@@ -64,6 +64,7 @@
     <Compile Include="Interfaces\IlInstruction.cs" />
     <Compile Include="Interfaces\IPing.cs" />
     <Compile Include="Interfaces\IPingConfiguration.cs" />
+    <Compile Include="Interfaces\IResolver.cs" />
     <Compile Include="IOC\AutofacConfiguration.cs" />
     <Compile Include="IOC\RuntimeChecks\BigEndianByteReader.cs" />
     <Compile Include="IOC\RuntimeChecks\ConstraintFailedException.cs" />

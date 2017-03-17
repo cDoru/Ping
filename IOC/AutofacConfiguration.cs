@@ -1,19 +1,19 @@
-﻿using Autofac;
+﻿using System;
+using Autofac;
+using PingExperiment.Attributes;
 using PingExperiment.Implementations;
 using PingExperiment.Interfaces;
-using Module = Autofac.Module;
+using PingExperiment.IOC.RuntimeChecks;
 
 namespace PingExperiment.IOC
 {
     public static class AutofacConfiguration
     {
-        private static bool Initialized = false;
-        private static object LockObject = new object();
+        private static bool Initialized;
+        private static readonly object LockObject = new object();
+        private static IContainer Container { get; set; }
 
-        public static IContainer Container { get; private set; }
-
-        private static void Configure(string url, int timeout, int pings, double maxNetworkUsage,
-            double secondsBetweenPings)
+        private static void Configure()
         {
             var builder = new ContainerBuilder();
             builder.RegisterType<AppConfigConfigurationProvider>().As<IConfigurationProvider>().SingleInstance();
@@ -23,6 +23,26 @@ namespace PingExperiment.IOC
             Container = builder.Build();
         }
 
-        public static 
+        public static T GetImplementation<[IsInterface]T>(this IResolver obj) where T: class
+        {
+            if (!Initialized)
+            {
+                using (new LockUtil(LockObject))
+                {
+                    if (!Initialized)
+                    {
+                        var checks = new NctChecks();
+                        checks.Check();
+
+                        Configure();
+                        Initialized = true;
+                    }
+                }
+            }
+
+            // resolve 
+            Type typeParameterType = typeof(T);
+            return (T) Container.Resolve(typeParameterType);
+        }
     }
 }

@@ -14,16 +14,40 @@ namespace PingExperiment.IOC.RuntimeChecks
 
         public NctChecks() : this(typeof(This)) { }
 
-        public NctChecks(Type startpoint)
+        private NctChecks(Type startpoint)
             : this(startpoint.Assembly)
         { }
 
-        public NctChecks(params Assembly[] ass)
+        private NctChecks(params Assembly[] ass)
         {
             foreach (var assembly in ass)
             {
                 _assemblies.Add(assembly);
+            }
 
+            //foreach (var assembly in ass)
+            //{
+            //    _assemblies.Add(assembly);
+
+            //    foreach (var type in assembly.GetTypes())
+            //    {
+            //        EnsureType(type);
+            //    }
+            //}
+
+            //while (_typesToCheck.Count > 0)
+            //{
+            //    var t = _typesToCheck.Pop();
+            //    GatherTypesFrom(t);
+
+            //    PerformRuntimeCheck(t);
+            //}
+        }
+
+        public void Check()
+        {
+            foreach (var assembly in _assemblies)
+            {
                 foreach (var type in assembly.GetTypes())
                 {
                     EnsureType(type);
