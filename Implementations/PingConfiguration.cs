@@ -4,13 +4,9 @@ namespace PingExperiment.Implementations
 {
     public class PingConfiguration : IPingConfiguration
     {
-        public PingConfiguration(string url, int timeout, int pings, double maxNetworkUsage, double secondsBetweenPings)
+        public PingConfiguration(IConfigurationProvider provider)
         {
-            Url = url;
-            Timeout = timeout;
-            Pings = pings;
-            MaxNetworkInterfaceUsage = maxNetworkUsage;
-            SecondsBetweenPings = secondsBetweenPings;
+            provider.Ingest<string>(c => Url = c, Settings.Url);
         }
 
         public string Url { get; private set; }

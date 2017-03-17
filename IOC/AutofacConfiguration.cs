@@ -13,8 +13,8 @@ namespace PingExperiment.IOC
         {
             var builder = new ContainerBuilder();
 
-            builder.Register(
-                x => new PingConfiguration(url, timeout, pings, maxNetworkUsage, secondsBetweenPings));
+            //builder.Register(
+            //    x => new PingConfiguration(url, timeout, pings, maxNetworkUsage, secondsBetweenPings));
 
             builder.RegisterType<Ping>().As<IPing>().InstancePerLifetimeScope();
 
