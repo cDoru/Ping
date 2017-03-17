@@ -12,8 +12,6 @@ namespace PingExperiment
 
             Console.WriteLine("Ping initialized");
             var result = ping.TestPing();
-
-
             Console.ReadKey();
         }
     }
