@@ -8,8 +8,12 @@ namespace PingExperiment
     {
         static void Main(string[] args)
         {
-            var ping = new Program().GetImplementation<IPing>();
+            new Program().Execute(args);
+        }
 
+        void Execute(string[] args)
+        {
+            var ping = this.GetImplementation<IPing>();
             Console.WriteLine("Ping initialized");
             var result = ping.TestPing();
             Console.ReadKey();
