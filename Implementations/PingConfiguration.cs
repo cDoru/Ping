@@ -7,6 +7,10 @@ namespace PingExperiment.Implementations
         public PingConfiguration(IConfigurationProvider provider)
         {
             provider.Ingest<string>(c => Url = c, Settings.Url);
+            provider.Ingest<int>(c => Timeout = c, Settings.Timeout);
+            provider.Ingest<int>(c => Pings = c, Settings.Pings);
+            provider.Ingest<double>(c => MaxNetworkInterfaceUsage = c, Settings.MaxNetworkUsage);
+            provider.Ingest<double>(c => SecondsBetweenPings = c, Settings.SecondsBetweenPings);
         }
 
         public string Url { get; private set; }
