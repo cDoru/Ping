@@ -2,7 +2,7 @@ using System;
 using System.Net.NetworkInformation;
 using System.Runtime.Serialization;
 
-namespace PingExperiment
+namespace PingExperiment.Entities
 {
     [Serializable]
     public class PingResultEntry : ISerializable

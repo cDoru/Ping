@@ -3,7 +3,7 @@ using Autofac;
 using PingExperiment.Attributes;
 using PingExperiment.Implementations;
 using PingExperiment.Interfaces;
-using PingExperiment.IOC.RuntimeChecks;
+using PingExperiment.Utils;
 
 namespace PingExperiment.IOC
 {

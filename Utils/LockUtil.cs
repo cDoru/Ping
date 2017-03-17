@@ -1,7 +1,7 @@
-﻿using System;
+using System;
 using System.Threading;
 
-namespace PingExperiment.IOC
+namespace PingExperiment.Utils
 {
     internal class LockUtil : IDisposable
     {

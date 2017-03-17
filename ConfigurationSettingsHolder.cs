@@ -1,6 +1,6 @@
 ﻿namespace PingExperiment
 {
-    class Settings
+    internal static class ConfigurationSettingsHolder
     {
         public const string Url = "Url";
         public const string Pings = "Pings";

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Reflection.Emit;
 using PingExperiment.IOC;
-using PingExperiment.IOC.RuntimeChecks;
+using PingExperiment.Utils;
 
 namespace PingExperiment.Interfaces
 {

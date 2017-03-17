@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace PingExperiment
+namespace PingExperiment.Entities
 {
     /// <summary>
     /// This class' used for aggregating many PingResults. It's similar to what PingResult is for PingResultEntry.

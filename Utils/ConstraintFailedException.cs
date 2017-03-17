@@ -1,6 +1,6 @@
 using System;
 
-namespace PingExperiment.IOC.RuntimeChecks
+namespace PingExperiment.Utils
 {
     public class ConstraintFailedException : Exception
     {

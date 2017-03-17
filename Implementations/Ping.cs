@@ -5,8 +5,10 @@ using System.Net;
 using System.Net.NetworkInformation;
 using System.Net.Sockets;
 using System.Threading;
+using PingExperiment.Entities;
 using PingExperiment.Exceptions;
 using PingExperiment.Interfaces;
+using PingExperiment.Utils;
 
 namespace PingExperiment.Implementations
 {

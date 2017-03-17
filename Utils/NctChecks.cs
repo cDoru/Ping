@@ -6,7 +6,7 @@ using System.Reflection;
 using PingExperiment.Attributes;
 using PingExperiment.Interfaces;
 
-namespace PingExperiment.IOC.RuntimeChecks
+namespace PingExperiment.Utils
 {
     public class NctChecks
     {

@@ -1,4 +1,4 @@
-namespace PingExperiment
+namespace PingExperiment.Entities
 {
     public enum PingResultEntryStatus
     {

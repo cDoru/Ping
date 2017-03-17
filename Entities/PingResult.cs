@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
 
-namespace PingExperiment
+namespace PingExperiment.Entities
 {
     [Serializable]
     public class PingResult

@@ -1,4 +1,6 @@
-﻿namespace PingExperiment.Interfaces
+﻿using PingExperiment.Entities;
+
+namespace PingExperiment.Interfaces
 {
     public interface IPing
     {
